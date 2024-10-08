@@ -9,11 +9,10 @@ export const Content = ({ allParts }) => {
   const part3 = allParts[2];
   return (
     <div>
-      <p>
-        <Part name={part1.name} numberOfExercises={part1.exercises} />
-        <Part name={part2.name} numberOfExercises={part2.exercises} />
-        <Part name={part3.name} numberOfExercises={part3.exercises} />
-      </p>
+      <Part name={part1.name} numberOfExercises={part1.exercises} />
+      <Part name={part2.name} numberOfExercises={part2.exercises} />
+      <Part name={part3.name} numberOfExercises={part3.exercises} />
+      <br />
     </div>
   );
 };
