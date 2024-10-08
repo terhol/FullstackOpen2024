@@ -10,18 +10,16 @@ const App = () => {
   const exercises2 = 7;
   const part3 = "State of a component";
   const exercises3 = 14;
+  const allParts = [
+    { name: part1, parts: exercises1 },
+    { name: part2, parts: exercises2 },
+    { name: part3, parts: exercises3 },
+  ];
 
   return (
     <div>
       <Header courseName={course} />
-      <Content
-        part1={part1}
-        exercises1={exercises1}
-        part2={part2}
-        exercises2={exercises2}
-        part3={part3}
-        exercises3={exercises3}
-      />
+      <Content allParts={allParts} />
       <Total exercises={[exercises1, exercises2, exercises3]} />
     </div>
   );

@@ -1,16 +1,18 @@
 /* eslint-disable react/jsx-key */
+
+import { Part } from "./Part";
+
 /* eslint-disable react/prop-types */
-export const Content = (props) => {
+export const Content = ({ allParts }) => {
+  const part1 = allParts[0];
+  const part2 = allParts[1];
+  const part3 = allParts[2];
   return (
     <div>
       <p>
-        {props.part1} {props.exercises1}
-      </p>
-      <p>
-        {props.part2} {props.exercises2}
-      </p>
-      <p>
-        {props.part3} {props.exercises3}
+        <Part name={part1.name} numberOfExercises={part1.parts} />
+        <Part name={part2.name} numberOfExercises={part2.parts} />
+        <Part name={part3.name} numberOfExercises={part3.parts} />
       </p>
     </div>
   );
