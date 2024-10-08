@@ -10,9 +10,9 @@ export const Content = ({ allParts }) => {
   return (
     <div>
       <p>
-        <Part name={part1.name} numberOfExercises={part1.parts} />
-        <Part name={part2.name} numberOfExercises={part2.parts} />
-        <Part name={part3.name} numberOfExercises={part3.parts} />
+        <Part name={part1.name} numberOfExercises={part1.exercises} />
+        <Part name={part2.name} numberOfExercises={part2.exercises} />
+        <Part name={part3.name} numberOfExercises={part3.exercises} />
       </p>
     </div>
   );
