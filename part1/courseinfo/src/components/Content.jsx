@@ -3,10 +3,10 @@
 import { Part } from "./Part";
 
 /* eslint-disable react/prop-types */
-export const Content = ({ allParts }) => {
-  const part1 = allParts[0];
-  const part2 = allParts[1];
-  const part3 = allParts[2];
+export const Content = ({ parts }) => {
+  const part1 = parts[0];
+  const part2 = parts[1];
+  const part3 = parts[2];
   return (
     <div>
       <Part name={part1.name} numberOfExercises={part1.exercises} />
