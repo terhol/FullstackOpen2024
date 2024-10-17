@@ -1,4 +1,5 @@
 /* eslint-disable react/prop-types */
+import { Button } from "./Button";
 
 export const Feedback = ({
   goodFeedback,
@@ -20,9 +21,9 @@ export const Feedback = ({
   return (
     <div>
       <h1>Give Feedback</h1>
-      <button onClick={handleClickGood}>Good</button>
-      <button onClick={handleClickNeutral}>Neutral</button>
-      <button onClick={handleClickBad}>Bad</button>
+      <Button onClick={handleClickGood} text="Good" />
+      <Button onClick={handleClickNeutral} text="Neutral" />
+      <Button onClick={handleClickBad} text="Bad" />
     </div>
   );
 };

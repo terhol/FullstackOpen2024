@@ -1,4 +1,6 @@
-// eslint-disable-next-line react/prop-types
+/* eslint-disable react/prop-types */
+import { StatisticLine } from "./StatisticLine";
+
 export const Statistics = ({ goodFeedback, neutralFeedback, badFeedback }) => {
   const all = goodFeedback + neutralFeedback + badFeedback;
   const average = all > 0 ? (goodFeedback - badFeedback) / all : 0;
@@ -10,12 +12,12 @@ export const Statistics = ({ goodFeedback, neutralFeedback, badFeedback }) => {
   ) : (
     <div>
       <h1>Statistics</h1>
-      <div>Good: {goodFeedback}</div>
-      <div>Neutral: {neutralFeedback}</div>
-      <div>Bad: {badFeedback} </div>
-      <div>All: {all}</div>
-      <div>Average: {average}</div>
-      <div>Positive: {positive}%</div>
+      <StatisticLine text="Good" value={goodFeedback} />
+      <StatisticLine text="Neutral" value={neutralFeedback} />
+      <StatisticLine text="Bad" value={badFeedback} />
+      <StatisticLine text="All" value={all} />
+      <StatisticLine text="Average" value={average} />
+      <StatisticLine text="Positive" value={positive + "%"} />
     </div>
   );
 };
