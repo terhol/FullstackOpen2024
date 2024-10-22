@@ -13,6 +13,8 @@ export const App = () => {
   ];
   const [selected, setSelected] = useState(0);
   const [points, setPoints] = useState(new Uint8Array(8));
+  const mostVotes = Math.max(...points);
+  const mostVotedAnecdote = points.findIndex((value) => value === mostVotes);
 
   const handleNextClick = () => {
     let newRandomNumber = Math.floor(Math.random() * 8);
@@ -28,12 +30,17 @@ export const App = () => {
 
   return (
     <div>
+      <h1>Anecdote of the Day</h1>
       {anecdotes[selected]}
       <br />
       Anecdote has {points[selected]} votes.
       <br />
       <button onClick={handleVoteClick}>Vote</button>
       <button onClick={handleNextClick}>Next Anecdote</button>
+      <h1>Anecdote with most votes</h1>
+      {anecdotes[mostVotedAnecdote]}
+      <br />
+      Anecdote has {points[mostVotedAnecdote]} votes.
     </div>
   );
 };
