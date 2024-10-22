@@ -12,16 +12,27 @@ export const App = () => {
     "The only way to go fast, is to go well.",
   ];
   const [selected, setSelected] = useState(0);
+  const [points, setPoints] = useState(new Uint8Array(8));
 
   const handleNextClick = () => {
     let newRandomNumber = Math.floor(Math.random() * 8);
     setSelected(newRandomNumber);
+  };
+  const handleVoteClick = () => {
+    const updatedPoints = [...points];
+    updatedPoints[selected] += 1;
+    setPoints(updatedPoints);
+    console.log(selected);
+    console.log(updatedPoints);
   };
 
   return (
     <div>
       {anecdotes[selected]}
       <br />
+      Anecdote has {points[selected]} votes.
+      <br />
+      <button onClick={handleVoteClick}>Vote</button>
       <button onClick={handleNextClick}>Next Anecdote</button>
     </div>
   );
