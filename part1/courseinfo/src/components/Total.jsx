@@ -1,7 +1,9 @@
 /* eslint-disable react/prop-types */
 export const Total = ({ parts }) => {
-  let numberOfExercises = 0;
-  parts.forEach((part) => (numberOfExercises += part.exercises));
-
+  const exerciseNumbers = parts.map((part) => part.exercises);
+  const numberOfExercises = exerciseNumbers.reduce(
+    (accumulator, currentValue) => accumulator + currentValue,
+    0
+  );
   return <div>Number of exercises: {numberOfExercises}</div>;
 };
