@@ -11,11 +11,18 @@ export const App = () => {
 
   const handleNewNameSubmit = (event) => {
     event.preventDefault();
-    const newNameObject = {
-      name: newName,
-    };
-    setPersons(persons.concat(newNameObject), newNameObject);
-    setNewName("");
+    if (
+      persons.find((existingPerson) => existingPerson.name === newName) !==
+      undefined
+    ) {
+      console.log("Name exists");
+    } else {
+      const newNameObject = {
+        name: newName,
+      };
+      setPersons(persons.concat(newNameObject), newNameObject);
+      setNewName("");
+    }
   };
 
   return (
