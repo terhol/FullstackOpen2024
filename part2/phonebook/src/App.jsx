@@ -15,7 +15,7 @@ export const App = () => {
       persons.find((existingPerson) => existingPerson.name === newName) !==
       undefined
     ) {
-      console.log("Name exists");
+      window.alert(`${newName} is already added to phonebook.`);
     } else {
       const newNameObject = {
         name: newName,
